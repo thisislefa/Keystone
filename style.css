@@ -1,0 +1,155 @@
+/* CSS RESET & VARIABLES */
+        :root {
+            --primary-text-color: #1a1a1a;
+            --secondary-text-color: #6c757d;
+            --background-color: #ffffff;
+            --card-background: #f8f9f9;
+            --border-color: #e0e0e0;
+            --accent-color: #000000;
+            --max-width: 1200px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--primary-text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* UTILITY CLASSES */
+        .site-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER STYLES */
+        .features-section {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .header-title {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--primary-text-color);
+        }
+
+        .header-button {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 8px 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-text-color);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .header-button:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .header-button-arrow:hover {
+            color: white;
+        }
+
+        .header-button-arrow {
+            margin-left: 8px;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* GRID AND CARD STYLES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            padding: 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-number {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--secondary-text-color);
+            margin-bottom: 20px;
+            /* Flex used to ensure number and content are properly aligned if needed, but primarily for spacing */
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .number-placeholder {
+            min-width: 40px; /* Ensure space for animated numbers */
+        }
+        
+        .card-content {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .content-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            width: 50%; /* Left column for title */
+        }
+        
+        .content-description {
+            font-size: 0.9rem;
+            color: var(--secondary-text-color);
+            width: 50%; /* Right column for description */
+        }
+
+        @media (max-width: 600px) {
+            .card-content {
+                flex-direction: column;
+            }
+            .content-title, .content-description {
+                width: 100%;
+            }
+        }
+
+        /* ANIMATION KEYFRAMES (Optional: used for initial count-up effect) */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
